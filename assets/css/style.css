@@ -1,0 +1,112 @@
+body {
+  font-family: monospace;
+}
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+}
+
+.nav img {
+  align-self: flex-start;
+}
+
+.nav h1 {
+  align-self: center !important;
+}
+
+.jumbotron {
+  display: flex;
+  justify-content: space-around;
+  align-content: space-around;
+  background-color: rgba(129, 35, 35, 0.582);
+  background: linear-gradient(
+    rgba(158, 28, 54, 0.45), 
+    rgba(158, 28, 54, 0.45)
+  ),url("../../assets/img/raitpic1.jpg");
+  background-size: cover;
+  min-height: 600px;
+
+}
+
+.flip-card {
+  background-color: transparent;
+  width: 350px;
+  height: 400px;
+  perspective: 1000px;
+  /* Remove this if you don't want the 3D effect */
+}
+
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  -webkit-box-shadow: 10px 10px 24px -6px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 10px 24px -6px rgba(0, 0, 0, 0.75);
+  box-shadow: 10px 10px 24px -6px rgba(0, 0, 0, 0.75);
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-card-front,
+.flip-card-back {
+  display: flex;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  /* Safari */
+  backface-visibility: hidden;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-card-front {
+  background-color: #9E1C36;
+  color: white;
+}
+
+/* Style the back side */
+.flip-card-back {
+  background-color: dodgerblue;
+  color: white;
+  transform: rotateY(180deg);
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  /* Set the fixed height of the footer here */
+  line-height: 60px;
+  /* Vertically center the text there */
+  background-color: #f5f5f5;
+}
+
+@media only screen and (max-width: 738px) {
+  .jumbotron {
+   
+    align-content: space-around;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+
+  .jumbotron > * {
+    margin: 1em 0;
+  }
+  
+  .flip-card {
+    width: 90%;
+    height: 200px;
+  }
+}
