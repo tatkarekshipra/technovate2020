@@ -112,3 +112,14 @@ body {
     height: 200px;
   }
 }
+
+.blinking{
+	animation:blinkingText 1.2s infinite;
+}
+@keyframes blinkingText{
+	0%{ color: #9E1C36; }
+	49%{ color: #9E1C36; }
+	60%{ color: transparent; }
+	99%{ color: transparent; }
+	100%{ color: #9E1C36; }
+}
